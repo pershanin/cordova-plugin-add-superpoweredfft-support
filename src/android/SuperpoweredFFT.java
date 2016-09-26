@@ -28,14 +28,14 @@ public class SuperpoweredFFT extends CordovaPlugin {
 				
 				this.cordova.getActivity().startActivity(calIntent);
 			   
-				SuperpoweredExample.SuperpoweredFFTComplex(
-					(float) arg_object.getDouble("real"),
-					(float) arg_object.getDouble("imag"),
-					(int) arg_object.getInt("logSize"),
-					(boolean) arg_object.getBoolean("forward")
-				);
+				real = (float) arg_object.getDouble("real");
+				imag = (float) arg_object.getDouble("imag");
+				logSize = (int) arg_object.getInt("logSize");
+				forward = (boolean) arg_object.getBoolean("forward");
 				
-				callbackContext.success();
+				SuperpoweredExample.SuperpoweredFFTComplex(real, imag, logSize, forward);
+				
+				callbackContext.success(real);
 				return true;
 			}
 			callbackContext.error("Invalid action");
