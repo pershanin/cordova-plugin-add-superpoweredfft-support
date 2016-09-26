@@ -6,7 +6,7 @@ import org.json.JSONObject;
 import org.json.JSONArray;
 import org.json.JSONException;
 
-import org.pershanin.superpoweredfft.*;
+import org.pershanin.superpoweredfft.SuperpoweredExample;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -29,7 +29,7 @@ public class SuperpoweredFFT extends CordovaPlugin {
 				int logSize = arg_object.getInt("logSize");
 				boolean forward = arg_object.getBoolean("forward");
 				
-				SuperpoweredFFT sp = new SuperpoweredFFT();
+				SuperpoweredExample sp = new SuperpoweredExample();
 				//sp.SuperpoweredFFTComplex(real, imag, logSize, forward);
 				
 				JSONObject json = new JSONObject();
