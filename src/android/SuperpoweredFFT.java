@@ -1,4 +1,4 @@
-package org.pershanin.SuperpoweredFFT;
+package org.pershanin.superpoweredfft;
  
 import org.apache.cordova.CallbackContext;
 import org.apache.cordova.CordovaPlugin;
