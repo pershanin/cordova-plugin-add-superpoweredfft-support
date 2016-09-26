@@ -6,7 +6,7 @@ import org.json.JSONObject;
 import org.json.JSONArray;
 import org.json.JSONException;
 
-import org.pershanin.superpoweredfft.SuperpoweredExample;
+import org.pershanin.superpoweredfft.*;
 
 import android.app.Activity;
 import android.content.Intent;
