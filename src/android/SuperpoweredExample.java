@@ -1,20 +1,17 @@
 package org.pershanin.superpoweredfft;
 
 public class SuperpoweredExample {
-	public:
+	public	SuperpoweredExample(const char *path, int *params);
+	public	~SuperpoweredExample();
 
-		SuperpoweredExample(const char *path, int *params);
-		~SuperpoweredExample();
+	public	void process(SLAndroidSimpleBufferQueueItf caller);
+	public	void onPlayPause(bool play);
+	public	void onCrossfader(int value);
+	public	void onFxSelect(int value);
+	public	void onFxOff();
+	public	void onFxValue(int value);
 
-		void process(SLAndroidSimpleBufferQueueItf caller);
-		void onPlayPause(bool play);
-		void onCrossfader(int value);
-		void onFxSelect(int value);
-		void onFxOff();
-		void onFxValue(int value);
-
-	private:
-		SuperpoweredFFT *fft;
+	private SuperpoweredFFT *fft;
 };
 
 #endif
