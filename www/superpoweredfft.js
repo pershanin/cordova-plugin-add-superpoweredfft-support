@@ -1,5 +1,5 @@
 var superpoweredFFT =  {
-    getComplex: function(real, imag, logSize, forward) {
+    getComplex: function(real, imag, logSize, forward, successCallback, errorCallback) {
         cordova.exec(
             successCallback, 			// success callback function
             errorCallback, 				// error callback function
