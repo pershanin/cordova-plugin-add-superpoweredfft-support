@@ -27,6 +27,7 @@ public class SuperpoweredFFT extends CordovaPlugin {
 				int logSize = arg_object.getInt("logSize");
 				boolean forward = arg_object.getBoolean("forward");
 				
+				System.loadLibrary("SuperpoweredExample");
 				SuperpoweredExample.onPlayPause();
 				//sp.SuperpoweredFFTComplex(real, imag, logSize, forward);
 				
@@ -43,9 +44,5 @@ public class SuperpoweredFFT extends CordovaPlugin {
 			return false;
 		} 
 	}
-	
-	static {
-        System.loadLibrary("SuperpoweredExample");
-    }
 	
 }
