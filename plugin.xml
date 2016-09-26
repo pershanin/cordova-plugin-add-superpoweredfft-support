@@ -19,9 +19,7 @@
             </feature>
         </config-file>
 		
-		<source-file src="src/android/SuperpoweredExample.h" target-dir="src/org/pershanin/superpoweredfft/" />
-		<source-file src="src/android/SuperpoweredExample.cpp" target-dir="src/org/pershanin/superpoweredfft/" />
-		<source-file src="src/android/SuperpoweredFFT.h" target-dir="src/org/pershanin/superpoweredfft/" />
+		<source-file src="src/android/SuperpoweredExample.java" target-dir="src/org/pershanin/superpoweredfft/" />
         <source-file src="src/android/SuperpoweredFFT.java" target-dir="src/org/pershanin/superpoweredfft/" />
     </platform>    
 </plugin>
