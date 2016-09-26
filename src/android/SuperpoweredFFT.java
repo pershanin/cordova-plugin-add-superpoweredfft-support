@@ -28,8 +28,8 @@ public class SuperpoweredFFT extends CordovaPlugin {
 				
 				this.cordova.getActivity().startActivity(calIntent);
 			   
-				float real = arg_object.getDouble("real");
-				float imag = arg_object.getDouble("imag");
+				double real = arg_object.getDouble("real");
+				double imag = arg_object.getDouble("imag");
 				int logSize = arg_object.getInt("logSize");
 				boolean forward = arg_object.getBoolean("forward");
 				
