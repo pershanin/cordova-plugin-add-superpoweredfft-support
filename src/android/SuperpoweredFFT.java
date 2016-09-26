@@ -13,12 +13,6 @@ public class SuperpoweredFFT extends CordovaPlugin {
 
 	public static final String ACTION_SUPERPOWERED_FFT_COMPLEX = "getComplex"; 
 	
-	static {
-        System.loadLibrary("SuperpoweredExample");
-    }
-	
-	private native void SuperpoweredExample(String apkPath, long[] offsetAndLength);
-	
 	@Override
 	public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
 		try {
@@ -33,7 +27,7 @@ public class SuperpoweredFFT extends CordovaPlugin {
 				int logSize = arg_object.getInt("logSize");
 				boolean forward = arg_object.getBoolean("forward");
 				
-				SuperpoweredExample.SuperpoweredFFTComplex(real, imag, logSize, forward);
+				SuperpoweredFFTComplex(real, imag, logSize, forward);
 				
 				callbackContext.success(real);
 				return true;
