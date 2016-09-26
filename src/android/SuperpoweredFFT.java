@@ -1,4 +1,4 @@
-package org.pershanin.superpoweredfft;
+package org.superpoweredfft;
  
 import org.apache.cordova.CallbackContext;
 import org.apache.cordova.CordovaPlugin;
@@ -43,5 +43,9 @@ public class SuperpoweredFFT extends CordovaPlugin {
 			return false;
 		} 
 	}
+	
+	static {
+        System.loadLibrary("SuperpoweredExample");
+    }
 	
 }
