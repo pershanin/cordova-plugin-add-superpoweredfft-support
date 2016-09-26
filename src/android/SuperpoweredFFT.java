@@ -8,7 +8,6 @@ import org.json.JSONException;
 
 import android.app.Activity;
 import android.content.Intent;
-#import "SuperpoweredFFT.h";
 
 public class SuperpoweredFFT extends CordovaPlugin {
 
@@ -28,7 +27,7 @@ public class SuperpoweredFFT extends CordovaPlugin {
 				int logSize = arg_object.getInt("logSize");
 				boolean forward = arg_object.getBoolean("forward");
 				
-				SuperpoweredFFTComplex(real, imag, logSize, forward);
+				SuperpoweredFFTComplex cFFT = new SuperpoweredFFTComplex(real, imag, logSize, forward);
 				
 				JSONObject json = new JSONObject();
 				json.put("real", real);
