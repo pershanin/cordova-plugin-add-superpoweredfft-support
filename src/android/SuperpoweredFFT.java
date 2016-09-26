@@ -8,7 +8,7 @@ import org.json.JSONException;
 
 import android.app.Activity;
 import android.content.Intent;
-import "SuperpoweredFFT.h"
+import "SuperpoweredFFT.h";
 
 public class SuperpoweredFFT extends CordovaPlugin {
 
