@@ -14,6 +14,7 @@ static const float headroom = powf(10.0f, -HEADROOM_DECIBEL * 0.025);
 
 class SuperpoweredExample {
 	public:
+
 		SuperpoweredExample(const char *path, int *params);
 		~SuperpoweredExample();
 
@@ -23,6 +24,9 @@ class SuperpoweredExample {
 		void onFxSelect(int value);
 		void onFxOff();
 		void onFxValue(int value);
+
+	private:
+		SuperpoweredFFT *fft;
 };
 
 #endif
