@@ -27,7 +27,8 @@ public class SuperpoweredFFT extends CordovaPlugin {
 				int logSize = arg_object.getInt("logSize");
 				boolean forward = arg_object.getBoolean("forward");
 				
-				method SuperpoweredFFTComplex(real, imag, logSize, forward);
+				SuperpoweredFFT sp = new SuperpoweredFFT();
+				sp.SuperpoweredFFTComplex(real, imag, logSize, forward);
 				
 				JSONObject json = new JSONObject();
 				json.put("real", real);
