@@ -13,23 +13,30 @@ public class SuperpoweredFFT extends CordovaPlugin {
 
 	public static final String ACTION_SUPERPOWERED_FFT_COMPLEX = "getComplex"; 
 	
+	static {
+        System.loadLibrary("SuperpoweredExample");
+    }
+	
+	private native void SuperpoweredExample(String apkPath, long[] offsetAndLength);
+	
 	@Override
 	public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
 		try {
 			if (ACTION_SUPERPOWERED_FFT_COMPLEX.equals(action)) { 
 				JSONObject arg_object = args.getJSONObject(0);
-				Intent calIntent = new Intent(Intent.ACTION_EDIT)
-				.setType("vnd.android.cursor.item/event")
-				.putExtra("real", (float) arg_object.getDouble("real"))
-				.putExtra("imag", (float) arg_object.getDouble("imag"))
-				.putExtra("logSize", (int) arg_object.getInt("logSize"))
-				.putExtra("forward", (boolean) arg_object.getBoolean("forward"));
-		 
-			   this.cordova.getActivity().startActivity(calIntent);
+				Intent calIntent = new Intent(Intent.ACTION_EDIT);
+				
+				this.cordova.getActivity().startActivity(calIntent);
 			   
-			   //SuperpoweredExample.SuperpoweredFFTComplex();
-			   callbackContext.success();
-			   return true;
+				SuperpoweredExample.SuperpoweredFFTComplex(
+					(float) arg_object.getDouble("real"),
+					(float) arg_object.getDouble("imag"),
+					(int) arg_object.getInt("logSize"),
+					(boolean) arg_object.getBoolean("forward")
+				);
+				
+				callbackContext.success();
+				return true;
 			}
 			callbackContext.error("Invalid action");
 			return false;
@@ -40,9 +47,4 @@ public class SuperpoweredFFT extends CordovaPlugin {
 		} 
 	}
 	
-	private native void SuperpoweredExample(String apkPath, long[] offsetAndLength);
-	
-	static {
-        System.loadLibrary("SuperpoweredExample");
-    }
 }
