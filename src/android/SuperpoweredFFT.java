@@ -1,4 +1,4 @@
-package com.pershanin.SuperpoweredFFT;
+package org.pershanin.SuperpoweredFFT;
  
 import org.apache.cordova.CallbackContext;
 import org.apache.cordova.CordovaPlugin;
@@ -6,7 +6,7 @@ import org.json.JSONObject;
 import org.json.JSONArray;
 import org.json.JSONException;
 
-import com.pershanin.SuperpoweredFFT.SuperpoweredExample;
+import org.pershanin.superpoweredfft.SuperpoweredExample;
 
 import android.app.Activity;
 import android.content.Intent;
