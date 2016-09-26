@@ -14,7 +14,7 @@ public class SuperpoweredFFT extends CordovaPlugin {
 	public static final String ACTION_SUPERPOWERED_FFT_COMPLEX = "getComplex"; 
 	
 	@Override
-	public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
+	public boolean execute(String action, JSONArray args, final CallbackContext callbackContext) throws JSONException {
 		try {
 			if (ACTION_SUPERPOWERED_FFT_COMPLEX.equals(action)) { 
 				JSONObject arg_object = args.getJSONObject(0);
@@ -27,9 +27,11 @@ public class SuperpoweredFFT extends CordovaPlugin {
 				int logSize = arg_object.getInt("logSize");
 				boolean forward = arg_object.getBoolean("forward");
 				
-				SuperpoweredFFTComplex(real, imag, logSize, forward);
+				method SuperpoweredFFTComplex(real, imag, logSize, forward);
 				
-				callbackContext.success(real);
+				JSONObject json = new JSONObject();
+				json.put("real", real);
+				callbackContext.success(json);
 				return true;
 			}
 			callbackContext.error("Invalid action");
