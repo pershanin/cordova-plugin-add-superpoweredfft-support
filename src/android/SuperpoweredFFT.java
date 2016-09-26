@@ -26,6 +26,8 @@ public class SuperpoweredFFT extends CordovaPlugin {
 				.putExtra("forward", (boolean) arg_object.getBoolean("forward"));
 		 
 			   this.cordova.getActivity().startActivity(calIntent);
+			   
+			   //SuperpoweredExample.SuperpoweredFFTComplex();
 			   callbackContext.success();
 			   return true;
 			}
@@ -37,4 +39,10 @@ public class SuperpoweredFFT extends CordovaPlugin {
 			return false;
 		} 
 	}
+	
+	private native void SuperpoweredExample(String apkPath, long[] offsetAndLength);
+	
+	static {
+        System.loadLibrary("SuperpoweredExample");
+    }
 }
